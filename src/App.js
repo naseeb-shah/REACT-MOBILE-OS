@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+import Card from './showdata'
+import './App.css'
+ var data=[
+     {
+         "id":1,
+         "title":"Mobile Engine",
+         "list":["Android","BalckBerry","Apple"]
+     },
+     {
+        "id":2,
+        "title":"Mobile Company",
+        "list":["Android","BalckBerry","Apple"]
+    }
+ ]
+ export default function App(){
+      return (
+        <div id='sai'>
+        {data.map((item) => (
+          <Card heading={item.title} list={item.list} key={item.id} />
+        ))}
+        
+      </div>
+        )
+ }
